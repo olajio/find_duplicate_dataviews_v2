@@ -1,0 +1,182 @@
+[
+  {
+    "deployment": "prod",
+    "kibana_url": "https://prod-kibana:5601",
+    "space_id": "team-alpha",
+    "space_name": "Team Alpha",
+    "data_view_title": "filebeat-*",
+    "data_view_id": "dv-001",
+    "reference_count": 8,
+    "duplicate_count": 3
+  },
+  {
+    "deployment": "prod",
+    "kibana_url": "https://prod-kibana:5601",
+    "space_id": "team-alpha",
+    "space_name": "Team Alpha",
+    "data_view_title": "filebeat-*",
+    "data_view_id": "dv-002",
+    "reference_count": 2,
+    "duplicate_count": 3
+  },
+  {
+    "deployment": "prod",
+    "kibana_url": "https://prod-kibana:5601",
+    "space_id": "team-alpha",
+    "space_name": "Team Alpha",
+    "data_view_title": "filebeat-*",
+    "data_view_id": "dv-003",
+    "reference_count": 0,
+    "duplicate_count": 3
+  },
+  {
+    "deployment": "prod",
+    "kibana_url": "https://prod-kibana:5601",
+    "space_id": "team-alpha",
+    "space_name": "Team Alpha",
+    "data_view_title": "metricbeat-*",
+    "data_view_id": "dv-004",
+    "reference_count": 3,
+    "duplicate_count": 2
+  },
+  {
+    "deployment": "prod",
+    "kibana_url": "https://prod-kibana:5601",
+    "space_id": "team-alpha",
+    "space_name": "Team Alpha",
+    "data_view_title": "metricbeat-*",
+    "data_view_id": "dv-005",
+    "reference_count": 0,
+    "duplicate_count": 2
+  },
+  {
+    "deployment": "prod",
+    "kibana_url": "https://prod-kibana:5601",
+    "space_id": "team-beta",
+    "space_name": "Team Beta",
+    "data_view_title": "*:filebeat-*",
+    "data_view_id": "dv-010",
+    "reference_count": 3,
+    "duplicate_count": 2
+  },
+  {
+    "deployment": "prod",
+    "kibana_url": "https://prod-kibana:5601",
+    "space_id": "team-beta",
+    "space_name": "Team Beta",
+    "data_view_title": "*:filebeat-*",
+    "data_view_id": "dv-011",
+    "reference_count": 0,
+    "duplicate_count": 2
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "dev-main",
+    "space_name": "Dev Main",
+    "data_view_title": "logs-*",
+    "data_view_id": "dev-dv-001",
+    "reference_count": 2,
+    "duplicate_count": 5
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "dev-main",
+    "space_name": "Dev Main",
+    "data_view_title": "logs-*",
+    "data_view_id": "dev-dv-002",
+    "reference_count": 0,
+    "duplicate_count": 5
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "dev-main",
+    "space_name": "Dev Main",
+    "data_view_title": "logs-*",
+    "data_view_id": "dev-dv-003",
+    "reference_count": 0,
+    "duplicate_count": 5
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "dev-main",
+    "space_name": "Dev Main",
+    "data_view_title": "logs-*",
+    "data_view_id": "dev-dv-004",
+    "reference_count": 0,
+    "duplicate_count": 5
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "dev-main",
+    "space_name": "Dev Main",
+    "data_view_title": "logs-*",
+    "data_view_id": "dev-dv-005",
+    "reference_count": 0,
+    "duplicate_count": 5
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "special-chars",
+    "space_name": "Special Chars Space",
+    "data_view_title": "logs-* (prod:filebeat-* + qa:filebeat-*)",
+    "data_view_id": "sc-dv-001",
+    "reference_count": 1,
+    "duplicate_count": 2
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "special-chars",
+    "space_name": "Special Chars Space",
+    "data_view_title": "logs-* (prod:filebeat-* + qa:filebeat-*)",
+    "data_view_id": "sc-dv-002",
+    "reference_count": 0,
+    "duplicate_count": 2
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "special-chars",
+    "space_name": "Special Chars Space",
+    "data_view_title": "a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]-filebeat-*",
+    "data_view_id": "sc-dv-010",
+    "reference_count": 1,
+    "duplicate_count": 2
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "special-chars",
+    "space_name": "Special Chars Space",
+    "data_view_title": "a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]-filebeat-*",
+    "data_view_id": "sc-dv-011",
+    "reference_count": 0,
+    "duplicate_count": 2
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "special-chars",
+    "space_name": "Special Chars Space",
+    "data_view_title": "\u65e5\u672c\u8a9e-filebeat-*",
+    "data_view_id": "sc-dv-020",
+    "reference_count": 0,
+    "duplicate_count": 2
+  },
+  {
+    "deployment": "dev",
+    "kibana_url": "https://dev-kibana:5601",
+    "space_id": "special-chars",
+    "space_name": "Special Chars Space",
+    "data_view_title": "\u65e5\u672c\u8a9e-filebeat-*",
+    "data_view_id": "sc-dv-021",
+    "reference_count": 0,
+    "duplicate_count": 2
+  }
+]

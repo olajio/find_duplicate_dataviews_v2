@@ -1,0 +1,240 @@
+==========================================================================================
+SIMULATION: find_duplicate_dataviews.py
+==========================================================================================
+
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+SCENARIO 1: Full multi-cluster scan (prod, qa, dev, ccs, mon)
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+  [PROD] Found 7 duplicate data view entries
+  [QA] Clean — no duplicates found
+  [DEV] Found 11 duplicate data view entries
+  [CCS] Clean — no duplicates found
+  [MON] ⚠️  Scan failed: 403 Forbidden
+
+==========================================================================================
+DUPLICATE DATA VIEWS REPORT
+==========================================================================================
+
+──────────────────────────────────────────────────────────────────────────────────────────
+📦 DEPLOYMENT: DEV
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  🔹 Space: Dev Main
+
+    Data View Title: logs-*
+    Copies: 5
+      ID: dev-dv-001                                     (2 references)
+      ID: dev-dv-002                                     (0 references)
+      ID: dev-dv-003                                     (0 references)
+      ID: dev-dv-004                                     (0 references)
+      ID: dev-dv-005                                     (0 references)
+
+  🔹 Space: Special Chars Space
+
+    Data View Title: a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]-filebeat-*
+    Copies: 2
+      ID: sc-dv-010                                      (1 references)
+      ID: sc-dv-011                                      (0 references)
+
+    Data View Title: logs-* (prod:filebeat-* + qa:filebeat-*)
+    Copies: 2
+      ID: sc-dv-001                                      (1 references)
+      ID: sc-dv-002                                      (0 references)
+
+    Data View Title: 日本語-filebeat-*
+    Copies: 2
+      ID: sc-dv-020                                      (0 references)
+      ID: sc-dv-021                                      (0 references)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+📦 DEPLOYMENT: PROD
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  🔹 Space: Team Alpha
+
+    Data View Title: filebeat-*
+    Copies: 3
+      ID: dv-001                                         (8 references)
+      ID: dv-002                                         (2 references)
+      ID: dv-003                                         (0 references)
+
+    Data View Title: metricbeat-*
+    Copies: 2
+      ID: dv-004                                         (3 references)
+      ID: dv-005                                         (0 references)
+
+  🔹 Space: Team Beta
+
+    Data View Title: *:filebeat-*
+    Copies: 2
+      ID: dv-010                                         (3 references)
+      ID: dv-011                                         (0 references)
+
+==========================================================================================
+SUMMARY
+==========================================================================================
+  Deployments with duplicates : 2
+  Duplicate title groups       : 7
+  Total duplicate data view IDs: 18
+==========================================================================================
+
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+SCENARIO 2: CSV export
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+
+📄 CSV report exported to: /home/claude/simulation_output.csv
+deployment,space_id,space_name,data_view_title,data_view_id,reference_count,duplicate_count
+prod,team-alpha,Team Alpha,filebeat-*,dv-001,8,3
+prod,team-alpha,Team Alpha,filebeat-*,dv-002,2,3
+prod,team-alpha,Team Alpha,filebeat-*,dv-003,0,3
+prod,team-alpha,Team Alpha,metricbeat-*,dv-004,3,2
+prod,team-alpha,Team Alpha,metricbeat-*,dv-005,0,2
+prod,team-beta,Team Beta,*:filebeat-*,dv-010,3,2
+prod,team-beta,Team Beta,*:filebeat-*,dv-011,0,2
+dev,dev-main,Dev Main,logs-*,dev-dv-001,2,5
+dev,dev-main,Dev Main,logs-*,dev-dv-002,0,5
+dev,dev-main,Dev Main,logs-*,dev-dv-003,0,5
+dev,dev-main,Dev Main,logs-*,dev-dv-004,0,5
+dev,dev-main,Dev Main,logs-*,dev-dv-005,0,5
+dev,special-chars,Special Chars Space,logs-* (prod:filebeat-* + qa:filebeat-*),sc-dv-001,1,2
+dev,special-chars,Special Chars Space,logs-* (prod:filebeat-* + qa:filebeat-*),sc-dv-002,0,2
+dev,special-chars,Special Chars Space,a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]-filebeat-*,sc-dv-010,1,2
+dev,special-chars,Special Chars Space,a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]-filebeat-*,sc-dv-011,0,2
+dev,special-chars,Special Chars Space,日本語-filebeat-*,sc-dv-020,0,2
+dev,special-chars,Special Chars Space,日本語-filebeat-*,sc-dv-021,0,2
+
+
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+SCENARIO 3: JSON export
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+
+📄 JSON report exported to: /home/claude/simulation_output.json
+[
+  {
+    "deployment": "prod",
+    "kibana_url": "https://prod-kibana:5601",
+    "space_id": "team-alpha",
+    "space_name": "Team Alpha",
+    "data_view_title": "filebeat-*",
+    "data_view_id": "dv-001",
+    "reference_count": 8,
+    "duplicate_count": 3
+  },
+  {
+    "deployment": "prod",
+    "kibana_url": "https://prod-kibana:5601",
+    "space_id": "team-alpha",
+    "space_name": "Team Alpha",
+    "data_view_title": "filebeat-*",
+    "data_view_id": "dv-002",
+    "reference_count": 2,
+    "duplicate_count": 3
+  },
+  {
+    "deployment": "prod",
+    "kibana_url": "https://prod-kibana:5601",
+    "space_id": "team-alpha",
+    "space_name": "Team Alpha",
+    "data_view_title": "filebeat-*",
+    "data_view_id": "dv-003",
+    "reference_count": 0,
+    "duplicate_count": 3
+  }
+]
+  ... (18 total entries)
+
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+SCENARIO 4: Scan only QA (expect: all clear)
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+
+==========================================================================================
+✅ ALL CLEAR: No duplicate data views found across any deployment.
+==========================================================================================
+
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+SCENARIO 5: Connectivity check
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+
+🔌 CONNECTIVITY CHECK
+============================================================
+  ✅ prod                 — Connected (4 spaces)
+  ✅ qa                   — Connected (2 spaces)
+  ✅ dev                  — Connected (2 spaces)
+  ❌ ccs                  — ConnectionError: Failed to establish connection to https://ccs-kibana:5601/api/spaces/space
+  ❌ mon                  — HTTP 403
+
+  Result: 3/5 clusters reachable
+
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+SCENARIO 6: Missing API key (env var reference not set)
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+  API key resolved to: None
+  Validation passed: False
+  (Expected: api_key=None, validation=False)
+
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+SCENARIO 7: Config with no clusters (expect: error)
+▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
+  Correctly exited with code: 1
+
+==========================================================================================
+SIMULATION SUMMARY
+==========================================================================================
+
+  Scenarios tested: 7
+  
+  1. Full multi-cluster scan     — ✅ Duplicates detected in prod & dev, skipped ccs & mon
+  2. CSV export                  — ✅ File written with correct columns
+  3. JSON export                 — ✅ File written with structured data
+  4. All-clean cluster (qa)      — ✅ "ALL CLEAR" message shown
+  5. Connectivity check          — ✅ 3/5 reachable, 2 failed (ccs=unreachable, mon=403)
+  6. Missing API key             — ✅ Env var unresolved, validation rejected
+  7. Empty config                — ✅ Script exited with error
+
+  Edge cases covered:
+  - Empty space (no data views)           → Skipped gracefully
+  - Unreachable cluster                   → ConnectionError caught, other clusters continue
+  - HTTP 403 auth failure                 → Caught, cluster skipped
+  - Special characters in titles          → Grouped and reported correctly
+  - Very long data view titles            → Handled without truncation issues
+  - Unicode characters in titles          → Grouped correctly
+  - 5 copies of same data view           → All 5 listed with individual ref counts
+  - Data view with 0 references          → Reported as 0 (orphan detection)
+  - Space with no duplicates             → Skipped silently (no false positives)
+
+==========================================================================================
+EDGE CASES FOUND & RECOMMENDED ENHANCEMENTS
+==========================================================================================
+
+  🔴 BUG FOUND — data view missing 'title' key:
+     If the Kibana API returns a data view without a 'title' field (e.g., 
+     corrupted object), the script will crash with a KeyError in 
+     find_duplicated_data_views(). This should be handled with .get().
+
+  🟡 ENHANCEMENT — per-cluster summary in the report:
+     When scanning 100+ clusters, the current report only shows clusters
+     that HAVE duplicates. Adding a "Clusters scanned: X | Clean: Y | 
+     With duplicates: Z | Failed: W" line in the summary would give a
+     clearer picture, especially for audit evidence.
+
+  🟡 ENHANCEMENT — log file output:
+     The original single-cluster script had a timestamped log file. The 
+     multi-cluster version only logs to stdout. Adding --log-file support
+     would help with scheduled/cron runs where you need to review later.
+
+  🟡 ENHANCEMENT — identify the "default" data view in each space:
+     Kibana spaces have a default data view. If a duplicate happens to be 
+     the default, deleting it would break the space. The script should flag
+     which ID is the default to prevent accidental deletion.
+
+  🟡 ENHANCEMENT — safe deletion recommendations:
+     The report shows reference counts but doesn't explicitly state which 
+     ID to keep vs delete. Adding a "KEEP" / "SAFE TO DELETE" label next 
+     to each ID (based on highest ref count) would make the report 
+     immediately actionable.
+
+  🟢 MINOR — kibana_url trailing slash:
+     If a user puts a trailing slash in the config URL (e.g., 
+     "https://prod-kibana:5601/"), the API calls would have double slashes.
+     Should strip trailing slashes on load.
+

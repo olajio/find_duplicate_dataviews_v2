@@ -1,0 +1,19 @@
+deployment,space_id,space_name,data_view_title,data_view_id,reference_count,duplicate_count
+prod,team-alpha,Team Alpha,filebeat-*,dv-001,8,3
+prod,team-alpha,Team Alpha,filebeat-*,dv-002,2,3
+prod,team-alpha,Team Alpha,filebeat-*,dv-003,0,3
+prod,team-alpha,Team Alpha,metricbeat-*,dv-004,3,2
+prod,team-alpha,Team Alpha,metricbeat-*,dv-005,0,2
+prod,team-beta,Team Beta,*:filebeat-*,dv-010,3,2
+prod,team-beta,Team Beta,*:filebeat-*,dv-011,0,2
+dev,dev-main,Dev Main,logs-*,dev-dv-001,2,5
+dev,dev-main,Dev Main,logs-*,dev-dv-002,0,5
+dev,dev-main,Dev Main,logs-*,dev-dv-003,0,5
+dev,dev-main,Dev Main,logs-*,dev-dv-004,0,5
+dev,dev-main,Dev Main,logs-*,dev-dv-005,0,5
+dev,special-chars,Special Chars Space,logs-* (prod:filebeat-* + qa:filebeat-*),sc-dv-001,1,2
+dev,special-chars,Special Chars Space,logs-* (prod:filebeat-* + qa:filebeat-*),sc-dv-002,0,2
+dev,special-chars,Special Chars Space,a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]-filebeat-*,sc-dv-010,1,2
+dev,special-chars,Special Chars Space,a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]a]-filebeat-*,sc-dv-011,0,2
+dev,special-chars,Special Chars Space,日本語-filebeat-*,sc-dv-020,0,2
+dev,special-chars,Special Chars Space,日本語-filebeat-*,sc-dv-021,0,2
