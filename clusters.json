@@ -1,0 +1,34 @@
+{
+  "clusters": {
+    "prod": {
+      "kibana_url": "https://prod-kibana:5601",
+      "api_key": "$PROD_KIBANA_API_KEY",
+      "verify_ssl": false
+    },
+    "qa": {
+      "kibana_url": "https://qa-kibana:5601",
+      "api_key": "$QA_KIBANA_API_KEY",
+      "verify_ssl": false
+    },
+    "dev": {
+      "kibana_url": "https://dev-kibana:5601",
+      "api_key": "$DEV_KIBANA_API_KEY",
+      "verify_ssl": false
+    },
+    "ccs": {
+      "kibana_url": "https://ccs-kibana:5601",
+      "api_key": "$CCS_KIBANA_API_KEY",
+      "verify_ssl": false
+    },
+    "mon": {
+      "kibana_url": "https://mon-kibana:5601",
+      "api_key": "$MON_KIBANA_API_KEY",
+      "verify_ssl": false
+    },
+    "infosec": {
+      "kibana_url": "https://infosec-kibana:5601",
+      "api_key": "$INFOSEC_KIBANA_API_KEY",
+      "verify_ssl": false
+    }
+  }
+}
