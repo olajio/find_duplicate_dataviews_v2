@@ -1,0 +1,815 @@
+/Users/olamideolajide/PycharmProjects/PythonProject/.venv/bin/python /Users/olamideolajide/PycharmProjects/PythonProject/find_duplicate_dataviews_v3.py --config clusters.json 
+
+🔍 Scanning 9 deployment(s) for duplicate data views...
+
+2026-02-28 01:49:36,694 - INFO - [(DBaaS) Agency Dashboard] Scanning https://dbaaspoc.kb.ps.cdm-db.com:9243 ...
+2026-02-28 01:49:37,050 - INFO -   Found 11 spaces
+  Clusters |███░░░░░░░░░░░░░░░░░░░░░░░░░░░| 1/9 (11%) [5s < ETA 37s] | (DBaaS)2026-02-28 01:49:41,307 - INFO - [(ES6DA) ES Dynamic Agency] Scanning https://es6agencydyn.kb.ps.cdm-db.com:9243 ...
+2026-02-28 01:49:41,638 - INFO -   Found 9 spaces
+  Clusters |██████░░░░░░░░░░░░░░░░░░░░░░░░| 2/9 (22%) [10s < ETA 33s] | (ES6DA2026-02-28 01:49:46,243 - INFO - [(ES6BA) ES Baseline Agency] Scanning https://es6agencybase.kb.ps.cdm-db.com:9243 ...
+2026-02-28 01:49:46,583 - INFO -   Found 7 spaces
+  Clusters |██████████░░░░░░░░░░░░░░░░░░░░| 3/9 (33%) [12s < ETA 24s] | (ES6BA2026-02-28 01:49:48,813 - INFO - [(LayerD) ES Federal] Scanning https://es6fedlayerd.kb.ps.cdm-db.com:9243 ...
+2026-02-28 01:49:49,153 - INFO -   Found 20 spaces
+  Clusters |█████████████░░░░░░░░░░░░░░░░░| 4/9 (44%) [34s < ETA 43s] | (Layer2026-02-28 01:50:10,893 - INFO - [(ES6DF) ES Dynamic Federal] Scanning https://es6federaldyn.kb.ps.cdm-db.com:9243 ...
+2026-02-28 01:50:11,183 - INFO -   Found 13 spaces
+  Clusters |████████████████░░░░░░░░░░░░░░| 5/9 (56%) [41s < ETA 32s] | (ES6DF2026-02-28 01:50:17,212 - INFO - [applogging-v4] Scanning https://applogging.kb.ps.cdm-db.com:9243 ...
+2026-02-28 01:50:17,488 - INFO -   Found 1 spaces
+  Clusters |████████████████████░░░░░░░░░░| 6/9 (67%) [41s < ETA 21s] | applog2026-02-28 01:50:17,773 - INFO - [ES6ESaaS] Scanning https://es6esaas.kb.ps.cdm-db.com:9243 ...
+2026-02-28 01:50:18,043 - INFO -   Found 3 spaces
+  Clusters |███████████████████████░░░░░░░| 7/9 (78%) [42s < ETA 12s] | ES6ESa2026-02-28 01:50:18,870 - INFO - [dhs] Scanning https://dhs.kb.ps.cdm-db.com:9243 ...
+2026-02-28 01:50:19,204 - INFO -   Found 6 spaces
+  Clusters |██████████████████████████░░░░| 8/9 (89%) [47s < ETA 6s] | dhs — d2026-02-28 01:50:23,402 - INFO - [FISMA Scorecard] Scanning https://fisma.kb.ps.cdm-db.com:9243 ...
+2026-02-28 01:50:23,727 - INFO -   Found 13 spaces
+  Clusters |██████████████████████████████| 9/9 (100%) [1m24s] ✅ Done — 335 du
+2026-02-28 01:51:00,937 - INFO - Scan completed in 84.2 seconds
+
+==========================================================================================
+DUPLICATE DATA VIEWS REPORT
+==========================================================================================
+
+──────────────────────────────────────────────────────────────────────────────────────────
+📦 DEPLOYMENT: (DBAAS) AGENCY DASHBOARD
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  🔹 Space: CDM Enabled Threat Hunting
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: ceth-logs-*                                    (0 references)
+      ID: logs-*                                         (0 references)
+
+  🔹 Space: SELF-SERVICE: Agency Dashboard
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: 779f7716-a8a9-5dfc-b420-2fb5f7087aab           (0 references)
+      ID: logs-*                                         (0 references)
+
+    Data View Title: metrics-*
+    Copies: 2
+      ID: 57cec2c5-27a3-5b6b-85b0-4778a59f87b7           (0 references)
+      ID: metrics-*                                      (0 references)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+📦 DEPLOYMENT: (ES6BA) ES BASELINE AGENCY
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  🔹 Space: CDM Enabled Threat Hunting
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: ceth-logs-*                                    (0 references)
+      ID: logs-*                                         (0 references)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+📦 DEPLOYMENT: (ES6DA) ES DYNAMIC AGENCY
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  🔹 Space: Agency
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: b6266828-69ad-437d-9f84-d64395e2aacf           (0 references)
+      ID: logs-*                                         (0 references)
+
+    Data View Title: metrics-*
+    Copies: 2
+      ID: 8eb7c7f5-a0a8-4c1f-8133-a731f6f7e281           (0 references)
+      ID: metrics-*                                      (0 references)
+
+  🔹 Space: CSOT WS
+
+    Data View Title: cdm_swam_current
+    Copies: 2
+      ID: 112164cf-7777-4bca-9254-7cc3f4f97a36           (7 references)
+      ID: rro-cdm_swam_current                           (0 references)
+
+    Data View Title: cdm_vuln_current
+    Copies: 2
+      ID: 5522865f-54d3-4c73-9f38-dda039fb812a           (11 references)
+      ID: rro-cdm_vuln_current                           (0 references)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+📦 DEPLOYMENT: (ES6DF) ES DYNAMIC FEDERAL
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  🔹 Space: CDM Component and Data Health
+
+    Data View Title: agency-dashboard-*:cdm_aim
+    Copies: 3
+      ID: 4feb2da7-7e72-4e31-bd7a-a28729804091           (0 references)
+      ID: 44b9e68d-e52f-41a4-bb09-c68ce99511d6           (0 references)
+      ID: 3a72dd95-fc41-45cb-9b8b-6c8d37f89b77           (2 references)
+
+    Data View Title: agency-dashboard-*:cdm_benchmark_aware
+    Copies: 2
+      ID: 782b3a13-6120-485c-b9d6-d46e5cc7405f           (0 references)
+      ID: 469fc7c7-cd85-46e1-8fc5-81fc178f1da9           (2 references)
+
+  🔹 Space: CDM Operations
+
+    Data View Title: cdm_threat
+    Copies: 2
+      ID: 5dd42ba9-66f2-446a-9c0b-0a746bc901d9           (1 references)
+      ID: 1ad7c1fd-dd72-4e1c-9f52-50995e0d85e0           (0 references)
+
+  🔹 Space: Default
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: 71f58756-11c3-409c-b210-3c239b2d3501           (0 references)
+      ID: 9ddfb971-b280-4812-81a0-7b6a3b864eaa           (0 references)
+
+    Data View Title: metrics-*
+    Copies: 2
+      ID: 3c582f0f-8767-46ff-a877-4e80664aab50           (0 references)
+      ID: 7ecd980f-a114-4ae3-9be4-58ab8775fecb           (0 references)
+
+  🔹 Space: FEIT Work
+
+    Data View Title: agency-dashboard-*:cdm_hwam_trending
+    Copies: 2
+      ID: 612e1b8b-ba66-485f-9f37-16b736946514           (1 references)
+      ID: 110b980c-a475-4312-b1c6-4f16d1d04f4c           (4 references)
+
+  🔹 Space: dan r
+
+    Data View Title: *dict*
+    Copies: 2
+      ID: f8599e0c-daaf-42a5-a19b-d88afaebd1d4           (0 references)
+      ID: 7809b540-dd0c-40d2-85f5-1fd0c061d38f           (0 references)
+
+    Data View Title: agency-dashboard-es6*:cdm_vuln_current
+    Copies: 2
+      ID: a4a23e00-c8f5-4ebe-81aa-88d2c47de958           (0 references)
+      ID: 480b695f-6a03-4bf7-867c-10c254961df3           (0 references)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+📦 DEPLOYMENT: (LAYERD) ES FEDERAL
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  🔹 Space: CCS Engineering Working Space 
+
+    Data View Title: agency-dashboard-*:cdm_csm_current
+    Copies: 3
+      ID: eea26275-01a4-4f00-8676-50333de21b1c           (3 references)
+      ID: 35454f48-3498-5a48-ac0e-69c0fa23b059           (9 references)
+      ID: 75b8e463-7f2f-56da-a22c-f18652b6d454           (2 references)
+
+    Data View Title: agency-dashboard-*:cdm_hwam_current
+    Copies: 4
+      ID: e6e92b09-d74c-4fe2-a59e-0ffc918d1444           (23 references)
+      ID: b405db5e-b36b-5557-bc85-11f69cdb376c           (74 references)
+      ID: e55d4379-3139-5267-b138-60d0133041c7           (50 references)
+      ID: 3b8703ef-1e74-5fbb-b930-a2a0f255d797           (99 references)
+
+    Data View Title: agency-dashboard-*:cdm_mdr
+    Copies: 2
+      ID: 8c169950-2005-5867-b798-14dc48d4fe63           (15 references)
+      ID: 939477ba-d05b-49c5-89df-4b0c70e5569a           (2 references)
+
+    Data View Title: agency-dashboard-*:cdm_swam_current
+    Copies: 3
+      ID: b4d35a22-9245-4228-9afc-36fe4ef8a775           (7 references)
+      ID: 9e030c63-ffb8-598e-98ee-5b3767e857c5           (52 references)
+      ID: b79df215-1238-5217-97b1-a0a88a0ede26           (132 references)
+
+    Data View Title: agency-dashboard-*:cdm_swam_trending
+    Copies: 2
+      ID: 67e654fc-01cc-567d-a26e-19b5a94e6426           (14 references)
+      ID: 6986d1e8-bad2-472d-8a3d-38871cf3f959           (1 references)
+
+    Data View Title: agency-dashboard-*:cdm_vuln_current
+    Copies: 4
+      ID: 4565fe9a-f60c-4aa7-b3dc-70cd632fb3ac           (12 references)
+      ID: e8436dd8-7ae8-5263-8487-6e32283e31df           (27 references)
+      ID: ee8424f5-681b-5cb6-805a-c3071f4fd6b5           (53 references)
+      ID: 3e26d686-a83a-5b9e-9632-96f004a13cca           (822 references)
+
+    Data View Title: agency-dashboard-*:cdm_vuln_trending
+    Copies: 2
+      ID: 52476db1-1fda-4691-a492-a4036883bd4f           (4 references)
+      ID: c8a1ebb5-1833-5485-b623-a0c155ed07f7           (63 references)
+
+    Data View Title: cdm_*
+    Copies: 2
+      ID: cb0f4197-5199-5a1d-807e-bd84a1d9d38d           (37 references)
+      ID: 911e5cd4-bfcf-55b9-9635-29944509f019           (1 references)
+
+    Data View Title: cdm_cve_dictionary
+    Copies: 2
+      ID: 95c1f9c1-f047-4fe1-8348-9d715a2d21a3           (1 references)
+      ID: e139c071-e9bc-514c-93cd-db0524478874           (3 references)
+
+  🔹 Space: CDM Enabled Threat Hunting
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: a79a29a4-772d-4ab1-b490-063907ac33cc           (154 references)
+      ID: logs-*                                         (0 references)
+
+    Data View Title: metrics-*
+    Copies: 2
+      ID: 304b023c-9a6b-4231-9fe0-b91715a590a7           (185 references)
+      ID: metrics-*                                      (0 references)
+
+  🔹 Space: CDM Engineering Working Space 
+
+    Data View Title: agency-dashboard-*:cdm_hwam_current
+    Copies: 2
+      ID: ef4dd0ee-0142-56a0-b6d1-909c69c03df3           (10 references)
+      ID: 528a9b44-01e5-5a6b-894b-aaa0c1c9a64c           (75 references)
+
+    Data View Title: agency-dashboard-*:cdm_vuln_current
+    Copies: 2
+      ID: 116dbf39-f333-501b-b889-ff7cb3824e23           (63 references)
+      ID: 2686d1da-19e4-5b60-a464-818b313e5854           (15 references)
+
+  🔹 Space: CETH Prod Copy
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: 80366773-4c8f-5478-b2b0-4409e0e6ec13           (151 references)
+      ID: logs-*                                         (0 references)
+
+    Data View Title: metrics-*
+    Copies: 2
+      ID: a619a05b-f34f-56f5-8512-e9ffce7fa258           (3 references)
+      ID: metrics-*                                      (0 references)
+
+  🔹 Space: CSOT Dev
+
+    Data View Title: agency-dashboard-*:cdm_hwam_current
+    Copies: 2
+      ID: 759668b5-2275-578c-96ca-ffd33b877cf9           (23 references)
+      ID: f03d7aaa-93d7-4c06-9814-97f135747b87           (1 references)
+
+    Data View Title: agency-dashboard-*:cdm_hwam_trending
+    Copies: 2
+      ID: 7e3a6ef1-dcaa-5332-b8b2-7ab5d19fff0e           (3 references)
+      ID: 1c0acfe1-87aa-462a-8eb8-f0706cf02bef           (8 references)
+
+    Data View Title: agency-dashboard-*:cdm_vuln_trending
+    Copies: 2
+      ID: 53dda4c3-d34d-4f4a-93ff-88ffb45dfb77           (16 references)
+      ID: f7be2354-008d-59b4-a74e-aefc7aa9c488           (7 references)
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: e6dea9d1-5d7a-42b0-a051-88991b9507e0           (0 references)
+      ID: logs-*                                         (0 references)
+
+    Data View Title: metrics-*
+    Copies: 2
+      ID: acf9f451-a999-426e-ada6-cfdc08364a40           (0 references)
+      ID: metrics-*                                      (0 references)
+
+  🔹 Space: ES-5.1 Support Space
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: 3a611950-71eb-4eff-a4ce-bd088b08fa60           (0 references)
+      ID: logs-*                                         (0 references)
+
+    Data View Title: metrics-*
+    Copies: 2
+      ID: d0bac7e8-4546-49f7-ac77-b937c3f18f87           (0 references)
+      ID: metrics-*                                      (0 references)
+
+  🔹 Space: FEIT Lab 
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: be6599ee-adae-53b7-8d66-d6ab5c5114aa           (127 references)
+      ID: logs-*                                         (0 references)
+
+    Data View Title: metrics-*
+    Copies: 2
+      ID: fa3689c2-d272-5b40-9404-63b1727b079e           (14 references)
+      ID: metrics-*                                      (0 references)
+
+  🔹 Space: Operational Visibility Federal Copy
+
+    Data View Title: agency-dashboard-*:cdm_device_scan
+    Copies: 2
+      ID: d6a809a1-a2ee-485c-96c2-6521b4f75601           (0 references)
+      ID: c8c273d6-b2dc-4fcc-811b-f4c87e57ecc4           (10 references)
+
+    Data View Title: agency-dashboard-*:cdm_device_scan_trending
+    Copies: 2
+      ID: c80cd61e-111b-4436-ad33-ed70dfbcfbe8           (0 references)
+      ID: 912583e3-f2c2-49e7-acd3-747908b94921           (4 references)
+
+    Data View Title: agency-dashboard-*:cdm_hwam_current
+    Copies: 2
+      ID: fbe32986-c0a8-4c25-b1ad-8c67132a8043           (10 references)
+      ID: 6f585524-1ea9-4bb4-9765-101781f99c54           (14 references)
+
+    Data View Title: agency-dashboard-*:cdm_hwam_trending
+    Copies: 2
+      ID: ca8349cd-db82-43a6-8f4b-e4ccfc8f1906           (0 references)
+      ID: 1a550f4e-adc8-4acc-be2e-6c4370012da5           (3 references)
+
+    Data View Title: cdm_directive_dictionary
+    Copies: 2
+      ID: ecea5e3d-b0ad-4de3-bb0b-15f83fbf5229           (0 references)
+      ID: 5ead3dbf-4176-4ec5-ab51-d16338202b85           (1 references)
+
+    Data View Title: data_dictionary
+    Copies: 2
+      ID: c8e4ece7-261f-4cb3-8f35-ccfb11f913a5           (9 references)
+      ID: 0e7b395c-c6db-46f8-ac44-6d8cf671a9ac           (5 references)
+
+  🔹 Space: Test_Operational Visibility Directives Copy
+
+    Data View Title: agency-dashboard-*:cdm_vuln_current
+    Copies: 2
+      ID: 15273412-ba69-45ab-b363-90982cb14f80           (19 references)
+      ID: 5f404082-a9d0-459b-8a98-8c66a9c79389           (19 references)
+
+  🔹 Space: USDA HVA
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: a77fcd6d-4929-5c00-aa51-e3e45d2f6367           (19 references)
+      ID: logs-*                                         (0 references)
+
+    Data View Title: metrics-*
+    Copies: 2
+      ID: aa048cd6-3437-54ac-9d5c-764e74207963           (18 references)
+      ID: metrics-*                                      (0 references)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+📦 DEPLOYMENT: FISMA SCORECARD
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  🔹 Space: CDM Enabled Threat Hunting
+
+    Data View Title: logs-*
+    Copies: 2
+      ID: ceth-logs-*                                    (0 references)
+      ID: logs-*                                         (0 references)
+
+  🔹 Space: DEFEND A
+
+    Data View Title: cdm_*
+    Copies: 2
+      ID: 126653bb-bea8-4a26-959a-f200af560ad9           (21 references)
+      ID: e198b663-58ed-4813-b8d2-6d82b69fa824           (20 references)
+
+    Data View Title: cdm_csm_current
+    Copies: 2
+      ID: 68c30afe-6d95-40f9-bba4-fb758a2b3684           (61 references)
+      ID: a31149d3-befb-5243-9758-a7681ad5015b           (9 references)
+
+    Data View Title: cdm_csm_current,cdm_hwam_current,cdm_vuln_current
+    Copies: 2
+      ID: 9bbe9967-8763-4373-934a-9dc26b8b3abb           (1 references)
+      ID: f96eca89-b0e5-46fc-9ef9-9a8b22e472eb           (0 references)
+
+    Data View Title: cdm_device_scan
+    Copies: 2
+      ID: 3ce52fde-6113-4e26-8bc7-b90ab42a5ee7           (2 references)
+      ID: 6c1ed084-1d28-497f-9337-1a2494f32410           (0 references)
+
+    Data View Title: cdm_hwam*
+    Copies: 2
+      ID: 2fc26d3b-377e-541e-bf0f-933b1d4e6066           (42 references)
+      ID: 214282b6-462e-4529-9cc4-07de46247790           (1 references)
+
+    Data View Title: cdm_hwam_current
+    Copies: 7
+      ID: 8b7046fc-7346-437f-a813-954e2d51cff2           (224 references)
+      ID: 5fa0687a-61fc-4516-b695-e53b37ff0203           (45 references)
+      ID: 35d71c61-564a-42f1-b9f1-e849e64800cc           (15 references)
+      ID: a41a8de3-c51e-4d73-94ba-ebf5b361fee4           (7 references)
+      ID: f5e622c7-e6ef-485b-bfad-b07707bb5a5f           (3 references)
+      ID: 8627700e-0a02-46b9-bd8b-fb0b41fbd9d2           (5 references)
+      ID: b8827350-0c81-485a-b5ba-30e6e00b78dd           (1 references)
+
+    Data View Title: cdm_hwam_trending
+    Copies: 3
+      ID: 0da9ee77-058e-4fea-96a3-b4922c38d786           (6 references)
+      ID: 9e66c93d-a4cf-401c-a15f-93dc04072441           (18 references)
+      ID: 81d636b1-905c-4304-8e21-4cc95bfd85e9           (18 references)
+
+    Data View Title: cdm_mdr
+    Copies: 2
+      ID: b2276f83-aa43-4f06-8725-c39697079159           (89 references)
+      ID: 55d899da-47f0-4a06-8a44-86005839382c           (7 references)
+
+    Data View Title: cdm_mur_current
+    Copies: 3
+      ID: 811d5e31-626b-47e4-a236-b3613a5e0e02           (87 references)
+      ID: f09a124f-2946-40f1-aa87-38a459ce6045           (6 references)
+      ID: aab2300b-911e-5381-9536-33233ab39bd0           (0 references)
+
+    Data View Title: cdm_system_boundary_current
+    Copies: 2
+      ID: 4ea948c2-2c08-4370-8e36-4a9dcfee8b05           (14 references)
+      ID: d5e66c65-9854-5656-96a4-4f4857e95331           (2 references)
+
+    Data View Title: cdm_vuln_current
+    Copies: 3
+      ID: 7a4fd91b-e35d-4231-93cd-eb7accdaa908           (311 references)
+      ID: 353f938f-62cb-4f8f-85a1-d8edc06cb705           (7 references)
+      ID: 89380b29-d5a9-5674-86bb-4fe3e6fd07c8           (15 references)
+
+    Data View Title: dhs_dqa*
+    Copies: 3
+      ID: f93f8eea-2649-4d01-b7d5-932af9bb2de6           (36 references)
+      ID: e1a5a867-6cc8-4cf7-b37e-18c8e7844631           (8 references)
+      ID: 939d2ba2-5142-4389-9655-eb58e90642f4           (1 references)
+
+    Data View Title: dhs_dqa_by_dvc_id
+    Copies: 2
+      ID: 096b3598-c7a9-4feb-a3f1-1777eed6e877           (20 references)
+      ID: c15a658d-c9b1-5ced-8389-e4f71c7d2760           (26 references)
+
+    Data View Title: dhs_dqa_by_host
+    Copies: 2
+      ID: 009aad18-3d9f-493a-9aba-1da8619128fe           (22 references)
+      ID: b1a21d61-bd25-51c7-81b8-03743a8df676           (61 references)
+
+    Data View Title: dhs_dqa_by_ip
+    Copies: 2
+      ID: 0b4af366-a9af-5719-99b4-a95faea02131           (53 references)
+      ID: a60ca8ab-a088-4f2e-ac94-69adb5f40bad           (20 references)
+
+    Data View Title: dhs_dqa_end_points_multi_host_multi_sn
+    Copies: 2
+      ID: 932a643c-7acd-47f3-95a3-249358c26d45           (5 references)
+      ID: 8fd03f69-86b3-41c2-80e1-8e2626bb3f60           (10 references)
+
+    Data View Title: dhs_dqa_serial_num_by_host
+    Copies: 2
+      ID: 055f9ddd-ce37-4e28-9eba-08afd2e11261           (21 references)
+      ID: 0c89fe97-4c13-5c08-bea4-6db9d93ad19a           (7 references)
+
+    Data View Title: dhs_fisma_mobius_software
+    Copies: 2
+      ID: 10bdf180-2714-48f8-af22-ca6ed3429a82           (0 references)
+      ID: 2fc19168-0b9e-4f6b-9579-becb41584120           (1 references)
+
+    Data View Title: dhs_staging*
+    Copies: 2
+      ID: b03f9272-b246-4f31-8a8c-46968a020e64           (0 references)
+      ID: fe71e9f7-5975-4e5a-ba60-7afd80e7d3d9           (0 references)
+
+    Data View Title: dhs_staging_hwam
+    Copies: 2
+      ID: 44bcc79d-80d8-4103-9877-ab03d72f17b8           (33 references)
+      ID: 66f843a0-4706-53e5-a644-7392ad3ce512           (30 references)
+
+    Data View Title: dhs_staging_hwam,cdm_hwam_current
+    Copies: 2
+      ID: 05f9c192-a6b3-4e5e-afd1-d547ecf5621f           (0 references)
+      ID: 2649fd40-9ef2-414d-9b16-247dc7ad4677           (0 references)
+
+    Data View Title: reindex_tasks*
+    Copies: 4
+      ID: e47a334f-f751-40af-a38e-e007b3f2a2b9           (6 references)
+      ID: 35d7a496-8e33-4a4a-8f8e-a6f776d8c2ce           (10 references)
+      ID: 6dc847e3-fe41-401a-a1fa-c400bb28d514           (5 references)
+      ID: cbf95999-b589-45e5-8b72-ae5dd534e43c           (1 references)
+
+  🔹 Space: Data Quality Audit
+
+    Data View Title: cdm_hwam*
+    Copies: 2
+      ID: c3bc56e4-935f-4fc6-8460-4260beea2f4b           (12 references)
+      ID: 30a1de27-1aab-45fe-b30a-d152e8cfc5b9           (0 references)
+
+    Data View Title: cdm_hwam_current
+    Copies: 2
+      ID: b6fa1ff8-8e6d-429c-8031-d37747494958           (0 references)
+      ID: bdde58eb-837d-4f03-8aa0-d474dc51b1fc           (0 references)
+
+    Data View Title: dhs_dqa*
+    Copies: 3
+      ID: 478b168b-b13f-4054-8fb4-aff1bca7a694           (3 references)
+      ID: f05fdc61-c9ff-47e4-985e-0b2d71bd3da2           (22 references)
+      ID: 435b56fd-a264-4bab-ba48-b1ebf7733fc1           (3 references)
+
+    Data View Title: dhs_dqa_by_dvc_id
+    Copies: 2
+      ID: 75d20647-8a4d-41a7-9d16-2b7e26c81bc9           (2 references)
+      ID: 81fc53bb-a1f8-477d-b375-2fe09fe7440e           (31 references)
+
+    Data View Title: dhs_dqa_by_host
+    Copies: 2
+      ID: 410c1ff8-a510-4952-b18a-2c8898a2a0e6           (97 references)
+      ID: a4193f18-e621-4d1f-a899-83911e762180           (10 references)
+
+    Data View Title: dhs_dqa_by_ip
+    Copies: 2
+      ID: a21bd02c-e12a-4dc8-8865-a4947c6d0c9a           (59 references)
+      ID: 71a1e699-df3c-4d13-ac10-dcf9f7465125           (5 references)
+
+    Data View Title: dhs_dqa_end_points_multi_host_multi_sn
+    Copies: 2
+      ID: 630329c9-efb6-45ab-8567-d37b7842f256           (5 references)
+      ID: 0b5b787f-a0cf-45a5-b7d2-c626481b16df           (1 references)
+
+    Data View Title: dhs_dqa_serial_num_by_host
+    Copies: 2
+      ID: 1cdc36ba-f970-4059-9aaa-27215f059980           (2 references)
+      ID: f3bbdd0d-e489-4bc8-bd20-aab84a81e92c           (0 references)
+
+    Data View Title: dhs_usss_dqa_hwam
+    Copies: 2
+      ID: 50c623f2-de5a-480f-a0aa-fd7c64f36991           (1 references)
+      ID: cd9c86bf-c681-4f82-88a8-2b0fb2264102           (0 references)
+
+  🔹 Space: FISMA Scorecard - FY 24
+
+    Data View Title: cdm_stig_dictionary
+    Copies: 2
+      ID: 19e19255-8a3c-48f4-b096-7480b477aa40           (0 references)
+      ID: 3f749722-05e3-43f4-b98a-8062865fc408           (1 references)
+
+    Data View Title: dhs_fisma_score_card_reports
+    Copies: 2
+      ID: d4351c5c-d574-461d-8d9b-8ce7a60bd329           (2500 references)
+      ID: 50531676-339a-45cf-8dbe-2ddc48760a98           (616 references)
+
+    Data View Title: dhs_fisma_scorecard_system_boundary
+    Copies: 6
+      ID: ead9c427-8681-4113-b743-5629a55a6825           (127 references)
+      ID: 095682f4-a026-4031-ae9e-8b6343e1da0a           (0 references)
+      ID: 9fb936da-b91e-4bf7-82db-8ba25bded7f5           (1 references)
+      ID: 440fd7e3-52c0-454b-9c34-f43752658b48           (0 references)
+      ID: 93633963-97d5-4f76-b8a3-8b28b1232711           (1 references)
+      ID: ba7eadad-6f4f-4bfc-b3ca-482b2d511566           (1 references)
+
+    Data View Title: dhs_fisma_vuln_score
+    Copies: 4
+      ID: 34c99159-8231-475f-b2b5-18ffa7e9bf86           (82 references)
+      ID: 9e5ae131-468c-4c3b-81fb-4756cb738aef           (9 references)
+      ID: 88d2e52d-0759-475d-aa81-ecf3edce2c98           (12 references)
+      ID: 6fe8d57d-f297-42e7-8275-fab71fa30fa2           (11 references)
+
+    Data View Title: dhs_staging_device_status_tracker*
+    Copies: 2
+      ID: 9c7facf6-7197-4d22-a4f6-2ba0457404c2           (16 references)
+      ID: e5581d8e-5797-433d-a304-6789d46a41d1           (1 references)
+
+  🔹 Space: FISMA Scorecard - FY 25
+
+    Data View Title: cdm_stig_dictionary
+    Copies: 2
+      ID: 8155722c-c486-4c26-ad80-71397ccf4c04           (0 references)
+      ID: f6774992-01a9-47fd-b40f-cf13076fb0a6           (0 references)
+
+    Data View Title: dhs_fisma_cpe_report
+    Copies: 2
+      ID: 4c07aa2f-fee5-4096-872b-9c061caf89fe           (1 references)
+      ID: 41841740-3aa0-4af9-8262-0ffe5a215c25           (50 references)
+
+    Data View Title: dhs_fisma_daily_cpe_report
+    Copies: 2
+      ID: 2d73506f-af99-49ca-9f91-320e0e489cad           (4 references)
+      ID: d85fd4d2-97b4-4c87-9699-948a4f6cf3ab           (2 references)
+
+    Data View Title: dhs_fisma_daily_hwam_score
+    Copies: 2
+      ID: 1c425538-7524-4544-a00e-b386bee74fa9           (3 references)
+      ID: 14a5e0b3-f85b-4220-9711-2d7952ca536c           (5 references)
+
+    Data View Title: dhs_fisma_daily_stig_score
+    Copies: 2
+      ID: 62c94fb3-62fd-4933-9cce-35600cf162ee           (5 references)
+      ID: ba5e36bd-d1d6-4072-99e6-2f166bf23e3c           (6 references)
+
+    Data View Title: dhs_fisma_daily_vuln_score
+    Copies: 2
+      ID: 53f37692-1c77-4c70-930f-2cc6a6810a6c           (3 references)
+      ID: ae4c4525-3c47-4740-ad9e-c7fcbbd536f4           (10 references)
+
+    Data View Title: dhs_fisma_host_defense
+    Copies: 3
+      ID: d85c7abd-389c-45c5-af87-4b83b572e551           (2 references)
+      ID: 37e0d4bc-b379-496a-800c-4d072d5d4341           (1 references)
+      ID: e44165e1-76db-4547-8cf8-6799b3d7fe2f           (60 references)
+
+    Data View Title: dhs_fisma_hwam_score
+    Copies: 2
+      ID: 650e10c5-c8d1-4c44-bc3f-35df396b042e           (1 references)
+      ID: 9313dc84-2ce4-49a0-b8da-873730ad62cc           (42 references)
+
+    Data View Title: dhs_fisma_score_card_reports
+    Copies: 4
+      ID: 828230fc-db7f-4da6-951d-50fe225af76c           (14 references)
+      ID: b9456de4-a736-4737-b1d3-e79cc489a0d5           (34 references)
+      ID: eb65ea2e-ca80-493f-9be4-a228bd1f5f00           (2484 references)
+      ID: dc2b8b54-d839-40a7-8b70-e64493410e82           (616 references)
+
+    Data View Title: dhs_fisma_scorecard_system_boundary
+    Copies: 8
+      ID: 104b60dc-fbce-42e9-8a79-1591826ce6fc           (2 references)
+      ID: e445565e-4f73-4be1-8244-a9cbc58f9e94           (2 references)
+      ID: a3645b0d-7d8c-4920-98a6-60caf39573df           (1 references)
+      ID: 18c144c5-a12a-4bcc-be53-f8fe7713bb24           (125 references)
+      ID: be36cc99-d444-4691-93e7-1bf1101167eb           (0 references)
+      ID: 1246971d-c776-4abb-98d2-dddb23c22f4e           (1 references)
+      ID: 0d58b674-8ea6-4697-ac14-5cc39d03ffa7           (0 references)
+      ID: df263771-cdad-4267-a263-ddf6310bc35c           (1 references)
+
+    Data View Title: dhs_fisma_stig_score
+    Copies: 2
+      ID: 95cd29b9-aa5d-41b9-a7c7-d1cf2bc9139a           (2 references)
+      ID: a4f9cbf1-413b-4254-8929-86b5f518e14f           (110 references)
+
+    Data View Title: dhs_fisma_vuln_score
+    Copies: 5
+      ID: 6932193a-a7bf-4e69-a741-522499edf3ee           (1 references)
+      ID: ba8a1c4c-96cf-4c73-94e2-31068812de50           (76 references)
+      ID: 4f614c10-0667-4726-ae5a-77ae6999bd0e           (8 references)
+      ID: 52b9e549-33a3-4cf2-8810-99d4c32b6662           (8 references)
+      ID: e0031d46-1d1d-4708-9bce-75fe8ef38411           (11 references)
+
+    Data View Title: dhs_staging_device_status_tracker*
+    Copies: 2
+      ID: 5cc2e961-6fdc-4132-aa2a-cb63bb90e76a           (1 references)
+      ID: c2e366e8-58a4-4d8c-94ea-8be75f9a5a72           (13 references)
+
+  🔹 Space: FISMA Team
+
+    Data View Title: cdm_*
+    Copies: 3
+      ID: a22b8a4e-3c87-4854-98cb-2143deacf956           (6 references)
+      ID: 847b8c64-28f4-447d-9a68-17b0f493c90b           (1 references)
+      ID: 6f017d65-1ea9-4ebb-b358-593fd01a9b28           (2 references)
+
+    Data View Title: cdm_hwam_current
+    Copies: 8
+      ID: 5e02e707-7256-4b64-b2b1-1280d0e7812c           (1088 references)
+      ID: 014b2cb6-f9c9-464a-8b50-5cee8dc32ac8           (33 references)
+      ID: 10cd9c0f-caa1-47f6-b44f-f6d1dbc33e6c           (33 references)
+      ID: 1947e33d-13af-4c3b-8de6-9b3475d9d53e           (1 references)
+      ID: 3aa08f5b-bcf9-46a9-892e-6b9e5785b35d           (1 references)
+      ID: 3bb1cd00-ed53-43b7-a900-faa3756911cb           (2 references)
+      ID: 827ea052-283b-49ea-b3bc-f2610637022d           (33 references)
+      ID: c88d5b50-c0ba-4cd7-9559-101902685fba           (1 references)
+
+    Data View Title: cdm_organization_current
+    Copies: 7
+      ID: 0ab633b4-3236-4ef8-9720-8942a5297262           (1 references)
+      ID: 36fc5d08-6bc3-4c38-a3f6-be8842c52a6b           (1 references)
+      ID: 4a4f8a64-5895-44f6-a9e4-31394b1332c1           (1 references)
+      ID: 5e747670-5357-4722-a598-504f88297d22           (1 references)
+      ID: e0f80514-5e64-4827-b720-c4c4afd30731           (1 references)
+      ID: 55917177-bb19-420b-8098-81d38e5ddfbe           (1 references)
+      ID: 818a1154-c89c-41fa-a321-56df5e606908           (0 references)
+
+    Data View Title: dhs_fisma_daily_hwam_score
+    Copies: 2
+      ID: 426d275c-4771-439e-ad92-7fc5d402a330           (4 references)
+      ID: 1be88c37-b1fe-48d2-8c6c-26b4b0387f93           (1 references)
+
+    Data View Title: dhs_fisma_host_defense
+    Copies: 10
+      ID: 06ed44c0-04bf-4b56-8deb-d8abbd657f97           (2 references)
+      ID: dbe8ed0b-7171-4a5d-bad0-17627b8f8e8a           (1 references)
+      ID: 2b002c42-d3bd-49c6-860c-7b591179a198           (1 references)
+      ID: 7ee2b1cb-9ac3-4085-a12c-fc2ba3cf9908           (86 references)
+      ID: 701b3cc1-28cd-4151-bc62-3a69dc5ae5f1           (1 references)
+      ID: 9b7500d7-fae1-4def-883f-f97cda12a0eb           (24 references)
+      ID: f1584bf2-d2dc-441b-8b68-01fa2c37b2e1           (24 references)
+      ID: c8cdf260-0dd1-4a44-985e-5c6714cf584a           (2 references)
+      ID: 92dc588f-6317-428e-9bb3-dbb2e6ef1ca1           (24 references)
+      ID: d63e2abd-6b2e-4b1b-80a3-1db167366d98           (1 references)
+
+    Data View Title: dhs_fisma_score_card_reports
+    Copies: 27
+      ID: aeb90b26-35c3-4ab7-9ab6-bac047be1a8b           (1718 references)
+      ID: 2d18abea-6bf0-4f24-b864-ad57c68c0d39           (2995 references)
+      ID: 05f0e438-ab46-4a31-bf71-e17c8d2b3632           (181 references)
+      ID: 1f1c41aa-dd1d-45af-b45d-1fa7a2147998           (16 references)
+      ID: 8a1e4fc7-ec1d-401e-bfd3-a698e002bde8           (17 references)
+      ID: ed604bac-5ba6-4acc-a64e-44802ab66969           (32 references)
+      ID: 2a6cfb3e-3214-451b-aa4d-38f18ff369e6           (181 references)
+      ID: 4892ca7f-f9db-480f-bafb-b6a6df6ef09d           (504 references)
+      ID: 3007fb35-688d-4c9c-b61a-9f0c0b26b22b           (513 references)
+      ID: 890f8399-4e08-458f-9927-4b5b14b9416f           (15 references)
+      ID: e7af38bf-9be8-4d18-a778-d4e550ce0071           (31 references)
+      ID: f30cd370-24e1-4223-afff-db2b3d75468d           (1 references)
+      ID: 4d69cacb-eff3-4bef-9e82-da6c905fbb7f           (504 references)
+      ID: 52901eb9-d1d6-4acf-9aa5-7e70b5d2f36d           (1 references)
+      ID: 6a34a8fc-b49b-40d8-94f8-f3244deda6c3           (48 references)
+      ID: b411f114-f744-4358-9994-5ac1f3582fbe           (181 references)
+      ID: f57e48fc-b9ee-4e0a-a3bf-7a173c6baccb           (26 references)
+      ID: 69e8eb88-89ef-4df4-8ec9-66fd61d15623           (64 references)
+      ID: e73a3a65-5214-4751-96f6-acf502ff1ce1           (34 references)
+      ID: 80238301-14e1-4c3e-b810-1d53d58ffda1           (26 references)
+      ID: 9a12d4dd-4a2e-43b3-86c5-c3766b5b8884           (1 references)
+      ID: a3c2fdcb-d18e-4576-a5eb-10fd936095c9           (504 references)
+      ID: ad0e37fa-4b82-4383-9bd2-64dd23e20bb4           (48 references)
+      ID: ac49077c-b5f2-4eba-a2b2-591c279dd376           (513 references)
+      ID: f2fc50d6-6ca7-4420-8a5c-1c97c6a62961           (399 references)
+      ID: ff6285bb-1017-458e-bf5c-ad66eecb5806           (1 references)
+      ID: f0ff444b-5dbd-42e7-8805-ff71d466e783           (513 references)
+
+    Data View Title: dhs_fisma_scorecard_system_boundary
+    Copies: 9
+      ID: 1585fecd-1466-4d42-b97c-f5a5886a4a54           (8 references)
+      ID: 1b59af9c-9d8d-49f8-88fb-f8a029f580e0           (4 references)
+      ID: e548d74b-6ace-4251-8a69-bddae82bdd93           (228 references)
+      ID: 31cf24d0-ecb3-4700-a3b3-d57e1c57865a           (68 references)
+      ID: ac33a842-5d27-4ff9-b699-b6ad37410b38           (2 references)
+      ID: 9de3fbc1-4c21-44af-a249-11018235c1f9           (19 references)
+      ID: 48592af5-69bc-4461-b33e-ae2383dfb157           (4 references)
+      ID: f591e1e3-e60a-4321-a641-dd22ceae3d8b           (90 references)
+      ID: 82b5bde2-d7b0-4ee2-b531-c7e3026fe731           (90 references)
+
+    Data View Title: dhs_fisma_vuln_score
+    Copies: 10
+      ID: 36d7187f-4d9e-45ba-b5f7-480743faaa69           (61 references)
+      ID: 0d773ee4-6514-4068-9ffd-815d8b85fdf2           (13 references)
+      ID: cd9606da-a75e-4e94-bf3b-9ff54b2ee3e9           (3 references)
+      ID: ff90b783-4b62-42fb-89f3-030fc7ea70c8           (3 references)
+      ID: 1a5465a2-3262-49dd-8bc2-67ea591f66ab           (24 references)
+      ID: ee6e0099-d0a6-462b-bf33-a71654d50573           (1 references)
+      ID: 450c04c7-fa8f-4425-860a-200f8ef57210           (1 references)
+      ID: 40bfea59-86cb-4741-941f-37c2b847958b           (24 references)
+      ID: 64e6dd5f-33cd-4cd6-9e31-55e09707b27e           (24 references)
+      ID: e89f735e-86a6-4b58-b65b-5695d366ceee           (2 references)
+
+    Data View Title: dhs_nvd
+    Copies: 2
+      ID: 17882ac0-f401-4e99-a998-d9580a91c1d6           (0 references)
+      ID: c8c1b00d-4371-4869-9847-e5065e5a30f4           (0 references)
+
+    Data View Title: dhs_staging_fisma
+    Copies: 2
+      ID: 955cd976-f21d-4522-a3b1-5873f8eade16           (0 references)
+      ID: d83c0138-9cb1-4d0f-9597-6266a0e85e57           (0 references)
+
+    Data View Title: dhs_staging_fisma_diar2
+    Copies: 2
+      ID: 4c2f9227-08b4-4aba-a258-570d1490964f           (0 references)
+      ID: 93c4c6d6-d2fd-489b-9713-812565b16e6d           (0 references)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+📦 DEPLOYMENT: DHS
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  🔹 Space: FY25 FISMA Metrics
+
+    Data View Title: cdm_hwam_current
+    Copies: 2
+      ID: fisma24-cdm_hwam_current                       (7 references)
+      ID: fisma25-cdm_hwam_current                       (14 references)
+
+    Data View Title: cdm_hwam_trending
+    Copies: 2
+      ID: fisma24-cdm_hwam_trending                      (22 references)
+      ID: fisma25-cdm_hwam_trending                      (24 references)
+
+    Data View Title: cdm_organization_current
+    Copies: 2
+      ID: fisma24-cdm_organization_current               (0 references)
+      ID: fisma25-cdm_organization_current               (0 references)
+
+    Data View Title: cdm_swam_current
+    Copies: 2
+      ID: fisma24-cdm_swam_current                       (1 references)
+      ID: fisma25-cdm_swam_current                       (0 references)
+
+    Data View Title: cdm_system_boundary_current
+    Copies: 2
+      ID: fisma24-cdm_system_boundary_current            (6 references)
+      ID: fisma25-cdm_system_boundary_current            (14 references)
+
+    Data View Title: cdm_vuln_current
+    Copies: 2
+      ID: fisma24-cdm_vuln_current                       (0 references)
+      ID: fisma25-cdm_vuln_current                       (0 references)
+
+    Data View Title: cdm_vuln_remediated
+    Copies: 2
+      ID: fisma24-cdm_vuln_remediated                    (2 references)
+      ID: fisma25-cdm_vuln_remediated                    (6 references)
+
+    Data View Title: cdm_vuln_trending
+    Copies: 2
+      ID: fisma24-cdm_vuln_trending                      (0 references)
+      ID: fisma25-cdm_vuln_trending                      (0 references)
+
+    Data View Title: data_dictionary
+    Copies: 2
+      ID: fisma24-data_dictionary                        (0 references)
+      ID: fisma25-data_dictionary                        (0 references)
+
+==========================================================================================
+SUMMARY
+==========================================================================================
+  Deployments with duplicates : 7
+  Duplicate title groups       : 119
+  Total duplicate data view IDs: 335
+──────────────────────────────────────────────────────────────────────────────────────────
+  Clusters scanned: 9  |  Clean: 2  |  With duplicates: 7  |  Failed: 0
+  Total scan time: 1m 24s
+==========================================================================================
+
+Process finished with exit code 0
