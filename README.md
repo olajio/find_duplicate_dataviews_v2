@@ -1,6 +1,6 @@
 # Find Duplicate Data Views
 
-A Python script that scans multiple Elasticsearch/Kibana deployments to identify duplicate data views across all Kibana spaces. Duplicate data views (same title, different IDs) cause user confusion, break dashboard portability, and degrade cluster performance through redundant queries.
+A Python script that scans multiple Elastic deployments to identify duplicate data views across all Kibana spaces. Duplicate data views (same title, different IDs) cause user confusion, break dashboard portability, and degrade cluster performance through redundant queries.
 
 ## Why This Matters
 
