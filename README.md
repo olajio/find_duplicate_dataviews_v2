@@ -4,7 +4,7 @@ A Python script that scans multiple Elastic deployments to identify duplicate da
 
 ## Why This Matters
 
-Duplicate data views are a common problem in multi-tenant Kibana environments. They typically appear when users manually create data views that already exist, or when Kibana objects are imported multiple times. Left unchecked, duplicates lead to:
+Duplicate data views are a common problem in Kibana. They typically appear when users manually create data views that already exist, or when Kibana objects are imported multiple times. Left unchecked, duplicates lead to:
 
 - **Performance degradation** — dashboards referencing wildcard patterns like `*:filebeat-*` across duplicate views multiply search load on the cluster
 - **User confusion** — team members see multiple identically-named data views and don't know which one to use, leading to inconsistent dashboards
