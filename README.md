@@ -9,7 +9,7 @@ Duplicate data views are a common problem in Kibana. They typically appear when 
 - **Performance degradation** — dashboards referencing wildcard patterns like `*:filebeat-*` across duplicate views multiply search load on the cluster
 - **User confusion** — team members see multiple identically-named data views and don't know which one to use, leading to inconsistent dashboards
 - **Maintenance overhead** — updating or deprecating a data view pattern requires tracking down every copy across every space
-- **SLA risk** — in regulated/federal environments, unnecessary cluster load from duplicates can push response times past SLA thresholds
+- **SLA risk** — in highly regulated environments like ours, unnecessary cluster load from duplicates can push response times past SLA thresholds
 
 This script gives you a single-command way to audit all of this across 100+ deployments.
 
